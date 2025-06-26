@@ -4,9 +4,9 @@ header { text-align: center; padding: 15px 15px 10px 15px; position: relative; }
 
 header img.logo1 { height: 60px; position: absolute; left: 20px; top: 20px; max-width: 60px }
 
-header img.logo2 { height: 150px; margin-top: 15px; cursor: pointer; }
+header img.logo2 { height: 150px; margin-top: 25px; cursor: pointer; }
 
-.spotify-embed { max-width: 800px; margin: -10px auto 30px; padding: 0 20px; }
+.spotify-embed { max-width: 800px; margin: -10px auto 20px; padding: 0 20px; }
 
 iframe { border-radius: 12px; width: 100%; height: 152px; border: none; }
 
