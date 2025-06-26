@@ -66,7 +66,7 @@ iframe {
 }
 
 .accordion::after {
-  content: '&#9660;';
+  content: '\25BC';
   float: right;
   transition: transform 0.3s ease-in-out;
 }
