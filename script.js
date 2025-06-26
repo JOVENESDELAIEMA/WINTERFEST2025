@@ -1,5 +1,5 @@
 // Crear acordeones dinámicamente desde JSON
-fetch('canciones.json')
+fetch('canciones_completo.json')
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('cancionContainer');
