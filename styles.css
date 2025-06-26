@@ -21,9 +21,9 @@ header img.logo1 {
 }
 
 header img.logo2 {
-  height: 100px;
+  height: 150px;
   margin-top: 10px;
-  max-width: 100px; /* Resuelto: Tamaño fijo */
+  max-width: 150px; /* Resuelto: Tamaño fijo */
 }
 
 .spotify-embed {
