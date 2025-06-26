@@ -7,17 +7,14 @@ fetch('canciones_completo.json')
       const btn = document.createElement('button');
       btn.className = 'accordion';
       btn.textContent = `• ${cancion.titulo}`;
-
       const panel = document.createElement('div');
       panel.className = 'accordion-panel';
       panel.textContent = cancion.letra;
-
       btn.addEventListener('click', () => {
         btn.classList.toggle('accordion-active');
         panel.classList.toggle('show');
-        toggleSnow(false); // detener nieve cuando se abre una letra
+        toggleSnow(false); // detener nieve al abrir
       });
-
       container.appendChild(btn);
       container.appendChild(panel);
     });
@@ -63,5 +60,4 @@ document.getElementById('logoToggle').addEventListener('click', () => {
   toggleSnow();
 });
 
-// iniciar nieve al cargar
 startSnow();
