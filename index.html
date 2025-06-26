@@ -1,628 +1,163 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>WINTER FEST</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #0d1b2a;
-            color: #e0e1dd;
-        }
+  <meta charset="UTF-8">
+  <title>WINTER FEST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #0d1b2a, #1b3358);
+      color: #ffffff;
+      overflow-x: hidden;
+    }header {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
 
-        header {
-            background: linear-gradient(to right, #1b263b, #0f172a);
-            padding: 60px 20px;
-            text-align: center;
-        }
+header img.logo1 {
+  height: 60px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
 
-        header h1 {
-            font-size: 3rem;
-            color: #7df9ff;
-            margin: 0;
-        }
+header img.logo2 {
+  height: 100px;
+  margin-top: 10px;
+}
 
-        .container {
-            max-width: 960px;
-            margin: auto;
-            padding: 20px;
-        }
+.spotify-embed {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
 
-        .accordion {
-            background-color: #1b263b;
-            color: #e0e1dd;
-            cursor: pointer;
-            padding: 15px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1.1rem;
-            transition: 0.4s;
-            margin-top: 10px;
-            border-radius: 8px;
-        }
+iframe {
+  border-radius: 12px;
+  width: 100%;
+  height: 152px;
+  border: none;
+}
 
-        .accordion:hover {
-            background-color: #1f2d47;
-        }
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+}
 
-        .accordion-active, .accordion:active {
-            background-color: #1f2d47;
-            color: #7df9ff;
-        }
+.accordion {
+  background-color: #102640;
+  color: #7df9ff;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 1.2rem;
+  font-family: 'Iceberg', cursive;
+  margin-top: 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
 
-        .accordion::after {
-            content: '\25BC';
-            float: right;
-            transition: transform 0.3s ease-in-out;
-        }
+.accordion:hover,
+.accordion.accordion-active {
+  background-color: #153558;
+}
 
-        .accordion-active::after {
-            transform: rotate(180deg);
-        }
+.accordion::after {
+  content: '\25BC';
+  float: right;
+  transition: transform 0.3s ease-in-out;
+}
 
-        .accordion-panel {
-            display: none;
-            background-color: #132238;
-            padding: 15px;
-            white-space: pre-wrap;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+.accordion.accordion-active::after {
+  transform: rotate(180deg);
+}
 
-        .btn-primary {
-            background-color: #7df9ff;
-            color: #0d1b2a;
-            border: none;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0 15px;
+  border-radius: 0 0 8px 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+}
 
-        .btn-primary:hover {
-            background-color: #5ad4e6;
-        }
+.accordion-panel.show {
+  padding: 15px;
+  max-height: 1000px;
+}
 
-        footer {
-            background-color: #1b263b;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #e0e1dd;
-            margin-top: 40px;
-        }
+footer {
+  background-color: #1b263b;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #e0e1dd;
+  margin-top: 40px;
+}
 
-        iframe {
-            border-radius: 12px;
-            width: 100%;
-            height: 150px;
-        }
-    </style>
+/* Nieve */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  z-index: 9999;
+  color: #fff;
+  font-size: 1em;
+  user-select: none;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+  </style>
 </head>
-<body>
+<body><header>
+  <img src="logo1.png" alt="Logo 1" class="logo1">
+  <img src="logo2.png" alt="Winter Fest Logo" class="logo2">
+</header><div class="spotify-embed">
+  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4sWSpwq3LiO" allow="encrypted-media"></iframe>
+</div><div class="container">
+  <button class="accordion"> • 1 ES TIEMPO (HILLSONG)</button>
+  <div class="accordion-panel">
+    AMOR INEXPLICABLE\nTU VIDA DISTE EN LA CRUZ\nTUYO SOY POR SIEMPRE\n... (resto de letra)
+  </div>
+  <!-- Repetir acordeones aquí -->
+</div><footer>
+  &copy; 2025 WINTER FEST. Todos los derechos reservados.
+</footer><script>
+  // Acordeón
+  document.querySelectorAll('.accordion').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('accordion-active');
+      const panel = btn.nextElementSibling;
+      panel.classList.toggle('show');
+    });
+  });
 
-<header>
-    <h1>WINTER FEST</h1>
-</header>
-
-<div class="container">
-
-    <h2 style="color:#7df9ff;">Lista de Canciones</h2>
-
-    <!-- Cada canción con su letra -->
-    <button class="accordion"> • 0 INTRO ()</button>
-    <div class="accordion-panel"></div>
-
-    <button class="accordion"> • 1 ES TIEMPO (HILLSONG)</button>
-    <div class="accordion-panel">
-AMOR INEXPLICABLE
-TU VIDA DISTE EN LA CRUZ
-TUYO SOY POR SIEMPRE
-EN TU MISERICORDIA
-ME DISTE VIDA, DISTE AMOR
-TU GRAN AMOR
-ES TIEMPO DE 
-DECIDIR POR QUIEN VIVO
-TE SEGUIRÉ, 
-MI ALABANZA TE DARÉ
-POR TI, 
-POR TI LO ENTREGO TODO
-SÓLO A TI 
-MI ALABANZA DOY
-TODA MI ALABANZA DOY
-POR TI, 
-POR TI ES POR QUIEN VIVO
-TE ALABARÉ 
-CON TODO LO QUE SOY
-TODA MI ALABANZA DOY
-TUYO SOY SEÑOR
-VIVO PARA DARTE GLORIA, OH DIOS
-GLORIA Y HONOR
-    </div>
-
-    <button class="accordion"> • 2 QUEREMOS FUEGO (RAMA CUTULI FT. PABLO SILVESTRI)</button>
-    <div class="accordion-panel">
-TIEMPO DE SALVACIÓN
-ESTE ES EL TIEMPO DE UNA REVOLUCIÓN
-ES EL MOMENTO DE ABRIR EL CORAZÓN
-Y QUE DEL CIELO LLUEVA EL FUEGO
-ESTA ES LA HORA 
-DE MANIFESTAR
-Y VER LA GLORIA,
-YO QUIERO ADORAR
-ES EL MOMENTO DE ESTAR BAJO LA UNCIÓN
-Y QUE DEL CIELO LLUEVA EL FUEGO
-VEN ENCIENDENOS, 
-ABRIMOS HOY EL CORAZÓN
-HAZ TU OBRA OH DIOS,
-RESPONDE A NUESTRO CLAMOR
-QUEREMOS FUEGO, ENCIENDENOS
-CÓMO EXPLOSIÓN DE GLORIA,
-DESCIENDE HOY
-FUEGO QUE TRANSFORMA,
-ENVUELVENOS
-QUE EL AVIVAMIENTO COMIENCE
-TIEMPO DE SALVACIÓN
-ESTE ES EL TIEMPO DE UNA REVOLUCIÓN
-ES EL MOMENTO DE ABRIR EL CORAZÓN
-Y QUE DEL CIELO LLUEVA EL FUEGO
-ESTA ES LA HORA DE MANIFESTAR
-Y VER LA GLORIA,
-YO QUIERO ADORAR
-ES EL MOMENTO DE ESTAR BAJO LA UNCION
-Y QUE DEL CIELO LLUEVA EL FUEGO
-VEN ENCIENDENOS,
-ABRIMOS HOY EL CORAZÓN
-HAZ TU OBRA OH DIOS,
-RESPONDE A NUESTRO CLAMOR
-QUEREMOS FUEGO,
-ENCIENDENOS
-CÓMO EXPLOSIÓN DE GLORIA,
-DESCIENDE HOY
-FUEGO QUE TRANSFORMA,
-ENVUELVENOS
-QUE EL AVIVAMIENTO COMIENCE
-QUEREMOS FUEGO,
-ENCIENDENOS
-CÓMO EXPLOSIÓN DE GLORIA,
-DESCIENDE HOY
-FUEGO QUE TRANSFORMA,
-ENVUELVENOS
-QUE EL AVIVAMIENTO COMIENCE
-QUEREMOS FUEGO
-    </div>
-
-    <button class="accordion"> • 3 TOMALO (HILLSONG)</button>
-    <div class="accordion-panel">
-DE TODO LUGAR
-LOS PERDIDOS VENDRAN
-EN LIBERTAD
-A TI CLAMARAN
-TRIUNFASTE EN LA CRUZ
-POR ESO VIVO ESTAS
-MI DIOS 
-A TI MI VIDA TE DARE
-ENVIASTE A JESUS
-POR MI SALVACION
-POR LA ETERNIDAD 
-EN TI TENGO PERDON
-BUSQUE LA VERDAD
-Y TE ENCONTRE A TI
-MI DIOS 
-A TI MI VIDA TE DARE
-JESUS POR TI YO VIVIRE
-DE TI NUNCA ME AVERGONZARE
-TE DOY TODO LO QUE SOY
-TOMA TOMALO
-TOMA TOMALO
-ERES EL QUE VISTA AL CIEGO DA
-BRILLAS EN LA OSCURIDAD
-LA SALVACION DEL MUNDO
-EN TUS MANOS ESTA
-    </div>
-
-    <button class="accordion"> • 4 EL SEÑOR ES MI REY MI TODO ()</button>
-    <div class="accordion-panel">
-EL SEÑOR ES MI REY, MI TODO
-EL SEÑOR ES MI LUZ, MI REY 
-ME HACE VIBRAR DE GOZO 
-ES QUIEN GUIA MIS PASOS 
-ÉL EXTIENDE SUS BRAZOS 
-EL CREADOR DE LOS CIELOS  
-    </div>
-
-    <button class="accordion"> • 5 OH MORADORA ()</button>
-    <div class="accordion-panel">
-OH MORADORA DE SION 
-ALABA JEHOVÁ 
-GRANDE SON SUS MARAVILLAS 
-SOBRE LOS MONTES Y COLLADOS 
-A MI AMADO BUSCARÉ
-GRANDE ES SU HERMOSURA
-Y AL ESTAR EN SU PRESCENCIA 
-GOZOSO DANZARÉ
-AL SEÑOR ALABARÉ
-GRANDE ES JEHOVÁ 
-DIGNO DE ALABAR
-TU ERES GRANDE JEHOVÁ
-GRANDE ES TU NOMBRE
-GRANDE ES TU NOMBRE
-    </div>
-
-    <button class="accordion"> • 6 QUIEN COMO JEHOVA ()</button>
-    <div class="accordion-panel">
-¿QUIÉN? ¿QUIÉN? 
-¿QUIÉN COMO JEHOVÁ?
-QUE CON SU PODER EL MAR ABRIÓ
-OIRÁN LAS NACIONES LO QUE ÉL HIZO
-Y VERÁN LAS COLINAS SU PODER
-SU PUEBLO LE ALABARÁ, 
-CON PANDEROS CANTARÁN 
-Y DIRÁN ¿QUIÉN? ¿QUIÉN COMO JEHOVÁ?
-    </div>
-
-    <button class="accordion"> • 7 CANTARE AL SEÑOR POR SIEMPRE ()</button>
-    <div class="accordion-panel">
-CANTARE AL SEÑOR POR SIEMPRE
-SU DIESTRA ES TODO PODER
-ECHO A LA MAR QUIEN LOS PERSEGUIA
-JINETE Y CABALLO ECHO A LA MAR
-ECHO A LA MAR 
-LOS CARROS DEL FARAON
-MI PADRE ES DIOS Y YO LE EXALTO
-MI PADRE ES DIOS Y LE EXALTARE
-ECHO A LA MAR 
-LOS CARROS DEL FARAON
-    </div>
-
-    <button class="accordion"> • 8 FIESTA EN EL DESIERTO (MONTESANTO)</button>
-    <div class="accordion-panel">
-EN SANTIAGO UNO, VERSO DOS
-ESTÁ ESCRITO QUE TENGA GOZO
-CUANDO PASE POR DIVERSAS PRUEBAS
-PORQUE DE ALLÍ SALDRÉ VICTORIOSO
-MI LAMENTO CAMBIASTE POR DANZA
-YA NO HAY TRISTEZA, SOLO ALABANZA
-MI LAMENTO CAMBIASTE POR DANZA
-YA NO HAY TRISTEZA
-YO DANZO, DANZO,
-DANZO, DANZO,
-DANZO, DANZO
-EN EL PROCESO
-Y GRITO, GRITO,
- GRITO, GRITO,
-GRITO, GRITO
-"NO MORIRÉ"
-DOY VUELTAS, VUELTAS,
-VUELTAS, VUELTAS,
-VUELTAS, VUELTAS
-NO ME AVERGÜENZO
-HAY FIESTA, FIESTA,
-FIESTA, FIESTA, FIESTA
-FIESTA EN EL DESIERTO
-AUNQUE VENGA LA ENFERMEDAD
-MIENTRAS VIVA TE ALABARÉ
-AUNQUE MIS LABIOS QUIERAN CALLAR
-MIENTRAS VIVA TE ALABARÉ
-AUNQUE EL DESIERTO ME QUIERA SECAR
-MIENTRAS VIVA TE ALABARÉ
-AUNQUE LA HIGUERA NO FLOREZCA
-MIENTRAS VIVA TE ALABARÉ
-Y AUNQUE VENGA LA ENFERMEDAD
-MIENTRAS VIVA TE ALABARÉ
-AUNQUE MIS LABIOS QUIERAN CALLAR
-MIENTRAS VIVA TE ALABARÉ
-AUNQUE EL DESIERTO ME QUIERA SECAR
-MIENTRAS VIVA TE ALABARÉ
-AUNQUE LA HIGUERA NO FLOREZCA
-MIENTRAS VIVA TE ALABARÉ
-MI LAMENTO CAMBIASTE POR DANZA
-YA NO HAY TRISTEZA, SOLO ALABANZA
-MI LAMENTO CAMBIASTE POR DANZA
-YA NO HAY TRISTEZA
-    </div>
-
-    <button class="accordion"> • 9 TAKE ME IN (KUTLESS)</button>
-    <div class="accordion-panel">
-SEÑOR LLÉVAME A TUS ATRIOS
-AL LUGAR SANTO
-AL ALTAR DE BRONCE
-SEÑOR TU ROSTRO QUIERO VER
-PÁSAME EN LA MUCHEDUMBRE
-POR DONDE EL SACERDOTE CANTA
-TENGO HAMBRE Y SED DE JUSTICIA
-Y SOLO ENCUENTRO UN LUGAR
-LLÉVAME AL LUGAR SANTISIMO
-POR LA SANGRE DEL CORDERO REDENTOR
-LLÉVAME AL LUGAR SANTISIMO
-TOCAME, LIMPIAME, HEME AQUI!
-    </div>
-
-    <button class="accordion"> • 10 PRIMERO NOS AMÓ (Factor de Cambio - Matthew Hotton)</button>
-    <div class="accordion-panel">
-CUÁN BELLO ES
-QUIEN MURIÓ POR MÍ
-FUI PERDONADO
-YO FUI ENCONTRADO
-CAMINARÉ
-EN TUS PROMESAS PERMANECERÉ
-A TI MIRARÉ
-SOLO EN TI CONFIARÉ
-FUE TU CRUZ, LA QUE ME SALVÓ
-FUE TU AMOR, QUE ME RESCATÓ
-POR ESO CANTO ADORACIÓN
-AL QUE ES EL GRAN, YO SOY
-FUE TU SANGRE QUE ME LIMPIÓ
-FUE TU VOZ LA QUE ME LLAMÓ
-FUE LA GRACIA, DE UN BUEN PADRE
-LA QUE ME ENAMORÓ
-HOY YO CANTO ESTA CANCIÓN
-PARA QUE TODOS OIGAN
-QUE HAY ALGUIEN QUE PRIMERO NOS AMÓ
-    </div>
-
-    <button class="accordion"> • 11 RECKLESS LOVE (Amor sin condición) (MICHAEL W. SMITH)</button>
-    <div class="accordion-panel">
-CARGAR LETRA
-    </div>
-
-    <button class="accordion"> • 12 SE EU ME HUMILHAR (ME VINE A HUMILLAR) (DISCOPRAISE)</button>
-    <div class="accordion-panel">
-CARGAR LETRA
-    </div>
-
-    <button class="accordion"> • 13 JUSTO A TIEMPO (FUNKY)</button>
-    <div class="accordion-panel">
-TAL VEZ SE SORPRENDA QUE TE HAYA LLAMADO
-PERO NO SOPORTO ESTA SITUACIÓN
-HE TRATADO, PERO NO HE LOGRADO
-ENCONTRAR ALIVIO PA MI CONDICIÓN
-RECONOZCO QUE SOY RESPONSABLE
-Y QUE POR CULPA MÍA ESTOY EN DONDE ESTOY
-SÉ QUE LO PODÍA EVITAR
-PERO YO MISMO YA NO SÉ QUIÉN SOY
-TE LLAMÉ PORQUE ME SIENTO SOLO
-Y ME ESTÁ MATANDO ESTA SOLEDAD
-LA GENTE ME MENCIONÓ TU NOMBRE
-Y ME RECORDARON QUE TÚ ERES REAL
-ME ARREPIENTO POR NO HABER ACTUADO
-CUANDO MIS AMIGOS ME HABLARON DE TI
-SÉ QUE NUNCA TE SUPE APRECIAR
-SIN EMBARGO HOY ESTÁS AQUÍ
-TANTAS VECES QUE TE RECHACÉ
-QUE ME HABLABAS Y YO TE IGNORABA
-PERO CUANDO TE NECESITÉ
-TÚ LLEGASTE JUSTO A TIEMPO
-CUANDO YA NO QUERÍA VIVIR
-Y SENTÍA QUE ESTABA PERDIDO
-CUANDO ESTABA A PUNTO DE MORIR
-TÚ LLEGASTE JUSTO A TIEMPO HASTA MÍ
-EN TUS BRAZOS HOY QUIERO ENTREGARME
-NO QUIERO ALEJARME DE TU CORAZÓN
-TÚ LLEGASTE A MÍ PARA SALVARME
-Y A MI VIDA DARLE UNA NUEVA RAZÓN
-ME PREGUNTO QUÉ HUBIESE PASADO
-SI NO HUBIERAS TÚ LLEGADO HASTA AQUÍ
-TODAVÍA NO PUEDO CREER
-QUE LLEGARAS Y ESTÉS JUNTO A MÍ
-TANTAS VECES QUE TE RECHACÉ
-QUE ME HABLABAS Y YO TE IGNORABA
-PERO CUANDO TE NECESITÉ
-TÚ LLEGASTE JUSTO A TIEMPO
-CUANDO YA NO QUERÍA VIVIR
-Y SENTÍA QUE ESTABA PERDIDO
-CUANDO ESTABA A PUNTO DE MORIR
-TÚ LLEGASTE JUSTO A TIEMPO
-RECONOZCO QUE YO HE SIDO UN TONTO
-Y QUE ME ESTABA HUNDIENDO POR MI ACTITUD
-PERO AHORA QUE TE TENGO CERCA
-ME HAS LIBRADO DE MI ESCLAVITUD
-ME DOY CUENTA QUE LO QUE TÚ HAS HECHO
-NADIE EN ESTE MUNDO LO PODÍA HACER
-ES POR ESO QUE AGRADEZCO QUE LLEGARAS HASTA AQUÍ
-PUES ME LIBRASTE CON TU AMOR Y TU PODER
-TANTAS VECES QUE TE RECHACÉ
-QUE ME HABLABAS Y YO TE IGNORABA
-PERO CUANDO TE NECESITÉ
-TÚ LLEGASTE JUSTO A TIEMPO
-CUANDO YA NO QUERÍA VIVIR
-Y SENTÍA QUE ESTABA PERDIDO
-CUANDO ESTABA A PUNTO DE MORIR
-TÚ LLEGASTE JUSTO A TIEMPO
-    </div>
-
-    <button class="accordion"> • 14 TUMBAS A JARDINES (ELEVATION WORSHIP)</button>
-    <div class="accordion-panel">
-EL MUNDO BUSQUÉ
-Y NO PUDO LLENARME
-NINGÚN TESORO
-QUE PUEDA GANAR ME SACIARÁ
-MAS LLEGASTE TÚ
-ME DISTE VIDA NUEVA
-Y CADA DESEO SE CUMPLIRÁ
-AQUÍ EN TU AMOR
-OH, NO HAY NADA
-NADA MEJOR
-NO HAY NADA
-NADA MEJOR
-NO HAY NADA
-NADA MEJOR QUE MI DIOS
-VENGO A TI
-SIN MIEDO, SIN RESERVAS
-CADA FRACASO
-HAS VISTO SEÑOR
-Y AÚN TU AMIGO SOY
-PORQUE EL DIOS DE LOS MONTES
-ES EL DIOS DE LOS VALLES
-NO HAY LUGAR QUE ME PUEDA ALEJAR
-DE TU GRACIA Y AMOR
-OH, NO HAY NADA
-NADA MEJOR
-NO HAY NADA
-NADA MEJOR
-NO HAY NADA
-NADA MEJOR QUE MI DIOS,
-OH, NO HAY NADA
-NADA MEJOR
-NO HAY NADA
-NADA MEJOR
-NO HAY NADA
-NADA MEJOR QUE MI DIOS
-CAMBIAS LAMENTO EN DANZA
-DE CENIZAS TRAES VIDA
-CAMBIAS CULPA POR GLORIA
-SÉ QUE SOLO TÚ LO HARÁS
-CAMBIAS LAMENTO, EN DANZA
-DE CENIZAS TRAES VIDA
-CAMBIAS CULPA POR GLORIA
-SÉ QUE SOLO TÚ LO HARÁS
-DE LAS RUINAS Y TUMBAS
-NACEN NUEVOS JARDINES
-RESUCITAS LOS HUESOS
-SÉ QUE SOLO TÚ LO HARÁS
-SÉ QUE SOLO TÚ LO HARÁS
-    </div>
-
-    <button class="accordion"> • 15 IT IS WELL (KUTLESS)</button>
-    <div class="accordion-panel">
-SI EN PAZ Y ESPERANZA MI VIDA ESTÁ
-O CÚBRALA UN MAR DE AFLICCIÓN
-CUALQUIERA QUE SEAN MIS LUCHAS DIRÉ:
-ALCANCÉ, ALCANCÉ SALVACIÓN
-ALCANCÉ
-SALVACIÓN
-ALCANCÉ, ALCANCÉ
-SALVACIÓN
-YA VENGA LA PRUEBA O ME TIENTE SATÁN
-NO MENGUAN MI FE EN JESÚS
-PUES CRISTO COMPRENDE MIS LUCHAS MI AFÁN
-Y SU SANGRE OBRARÁ EN MI FAVOR
-FELIZ YO ME SIENTO AL SABER QUE JESÚS
-ME LIBRA DE YUGO OPRESOR
-QUITÓ MI PECADO, CLAVÁDO EN LA CRUZ
-GLORIA DEMOS AL BUEN SALVADOR
-LA FE SE TRANSFORMA EN GRAN REALIDAD
-AL IRSE LA NIEBLA VELOZ
-DESCIENDE JESÚS CON SU GRAN MAJESTAD
-¡ALELUYA!, ESTOY BIEN CON MI DIOS
-    </div>
-
-    <button class="accordion"> • 16 LEMBRANÇAS (ELI SOARES)</button>
-    <div class="accordion-panel">
-CARGAR LETRA
-    </div>
-
-    <button class="accordion"> • 17 DIOS DE MI VIDA (THALES ROBERTO)</button>
-    <div class="accordion-panel">
-DIOS MÍO
-PADRE MÍO
-AMOR MÍO
-TODO, LA RAZÓN DE TODO
-DIOS MÍO
-AIRE, MÍO
-FARO, FARO QUE NECESITO,
-TE NECESITO
-NECESITO DIOS SENTIRTE EN MI VIDA
-Y MIRA HACIA TU LUZ, PARA NO PERDERME
-MI SEÑOR, TÚ ERES MI ALEGRÍA
-¡TE NECESITO!
-DIOS DE MI VIDA
-CAMINA CONMIGO
-SOY TU MORADA VEN, VIVE EN MÍ
-DÉJAME DECIR LO QUE NECESITO DIOS
-¡NECESITO DEL SEÑOR!
-LARA LARA LARA LAAA
-LARA LARA LARA LARALAAA
-LARA LA LA LARALA LALAA
-¡OH OOH!
-DIOS MÍO
-PADRE MÍO
-AMOR MÍO
-TODO, LA RAZÓN DE TODO
-DIOS MÍO
-AIRE, MÍO
-FARO, EL FARO QUE NECESITO,
- TE NECESITO
-NECESITO DIOS SENTIRTE EN MI VIDA
-Y MIRA HACIA TU LUZ, PARA NO PERDERME
-MI SEÑOR, TÚ ERES MI ALEGRÍA
-¡TE NECESITO!
-DIOS DE MI VIDA
-CAMINA CONMIGO
-SOY TU MORADA VEN, VIVE EN MÍ
-DÉJAME DECIR LO QUE NECESITO DIOS
-NECESITO DEL SEÑOR
-DIOS DE MI VIDA
-CAMINA CONMIGO
-SOY TU MORADA VEN, VIVE EN MÍ
-DÉJAME DECIR LO QUE NECESITO DIOS
-NECESITO DEL SEÑOR
-    </div>
-
-    <button class="accordion"> • 18 QUITAMANCHA ()</button>
-    <div class="accordion-panel">
-QUITAMANCHA
-QUITAMANCHA
-EL DÍA QUE TE APLASTA, LA NOCHE QUE TE GASTA
-VOLUMEN QUE TE ELEVA, MANADA QUE TE LLEVA
-LA MENTE QUE DECIDE, EL CUERPO QUE TE PIDE
-FUTURO QUE TE ACUESTA Y QUE HAGAN LAS APUESTAS
-¿CÓMO PODER ABLANDAR UNA VIDA TAN DURA?
-¿CÓMO PODERME FRENAR EN UN MUNDO QUE APURA?
-¿CÓMO QUITARME LA MANCHA QUE ME HACE MORIR?
-QUITAMANCHA
-QUITAMANCHA
-¿CÓMO SIGO PARADO, SI MIRO A CADA LADO?
-SI MIRO PARA ARRIBA ENCUENTRO LA SALIDA
-LIBERA DE LA PENA Y QUITA LA CONDENA
-LA PALABRA QUE SIENTO NO SE LA LLEVA EL VIENTO
-SI ME PUDISTE ABLANDAR UNA VIDA TAN DURA
-SI ME PUDISTE FRENAR EN UN MUNDO QUE APURA
-SI ME QUITASTE LA MANCHA Y ME HACES VIVIR
-QUITAMANCHA
-    </div>
-
-    <h2 style="color:#7df9ff; margin-top: 40px;">Reproducción</h2>
-
-    <button class="accordion"> • Spotify</button>
-    <div class="accordion-panel">
-        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4sWSpwq3LiO"  frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br>
-        <a href="#" class="btn-primary">Buscar en Spotify</a>
-    </div>
-
-    <button class="accordion"> • YouTube</button>
-    <div class="accordion-panel">
-        <iframe width="100%" height="150" src="https://www.youtube.com/embed/dQw4w9WgXcQ"  frameborder="0" allowfullscreen></iframe><br>
-        <a href="#" class="btn-primary">Buscar en YouTube</a>
-    </div>
-
-</div>
-
-<footer>
-    &copy; 2025 WINTER FEST. Todos los derechos reservados.
-</footer>
-
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    for (var i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("accordion-active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
-</script>
-
-</body>
+  // Nieve
+  const snowContainer = document.createDocumentFragment();
+  for (let i = 0; i < 50; i++) {
+    const snowflake = document.createElement('div');
+    snowflake.textContent = '❄';
+    snowflake.className = 'snowflake';
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.animationDuration = 5 + Math.random() * 5 + 's';
+    snowflake.style.fontSize = 10 + Math.random() * 10 + 'px';
+    snowContainer.appendChild(snowflake);
+  }
+  document.body.appendChild(snowContainer);
+</script></body>
 </html>
