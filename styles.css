@@ -22,7 +22,7 @@ iframe { border-radius: 12px; width: 100%; height: 152px; border: none; }
 
 .accordion-panel { max-height: 0; overflow: hide; transition: max-height 0.4s ease; background: rgba(0, 0, 0, 0.3); padding: 0 15px; border-radius: 0 0 8px 8px; font-size: 1rem; text-transform: uppercase; white-space: pre-wrap; color: white; margin-bottom: 20px; }
 
-.accordion-panel.show { padding: 15px; }
+.accordion-panel.show { padding: 15px; max-height: 1200;}
 
 footer { background-color: #1b263b; text-align: center; padding: 20px; font-size: 0.9rem; color: #e0e1dd; margin-top: 40px; }
 
