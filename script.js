@@ -9,7 +9,7 @@ fetch('canciones_completo.json')
       btn.textContent = `• ${cancion.titulo}`;
       const panel = document.createElement('div');
       panel.className = 'accordion-panel';
-      panel.textContent = cancion.letra;
+      panel.innerHTML = cancion.letra.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
       btn.addEventListener('click', () => {
         btn.classList.toggle('accordion-active');
         panel.classList.toggle('show');
